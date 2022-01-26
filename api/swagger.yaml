@@ -1,0 +1,59 @@
+swagger: "2.0"
+info:
+  description: "This is a sample server to get the  Top ten most used words and 
+times of occurrence in the text  "
+  version: "1.0.0"
+  title: "Swagger Server"
+host: "localhost:8080"
+basePath: "/count"
+tags:
+- name: "Count Server"
+  description: "Top tem most used words and times of occurances in the text"
+schemes:
+- "http"
+paths:
+  /count:
+    post:
+      tags:
+      - "count"
+      summary: "Provide a input and get Top tem most used words and times of occurances in the text"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Required a input text that needs to be calculated"
+        required: true
+        schema:
+          $ref: "#/definitions/Input"
+      responses:
+        "400":
+          description: "Invalid input"
+        "200" :
+          description : "json with word and its counts"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Resp"
+    
+definitions:
+  Input:
+    type: "object"
+    properties:
+      input:
+        type: "string"
+        
+  Resp:
+    type: "object"
+    required:
+    - "name"
+    - "photoUrls"
+    properties:
+      word:
+        type: "string"
+      count:
+        type: "integer"
+        
