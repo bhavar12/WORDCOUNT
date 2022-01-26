@@ -1,6 +1,6 @@
 package main
 
-import "gitlab.connectwisedev.com/platform/WORDCOUNT/src/server"
+import "WORDCOUNT/src/server"
 
 func main() {
 	// Register the routes
