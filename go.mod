@@ -1,4 +1,4 @@
-module gitlab.connectwisedev.com/platform/WORDCOUNT
+module WORDCOUNT
 
 go 1.17
 
