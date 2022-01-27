@@ -48,9 +48,6 @@ definitions:
         
   Resp:
     type: "object"
-    required:
-    - "name"
-    - "photoUrls"
     properties:
       word:
         type: "string"
